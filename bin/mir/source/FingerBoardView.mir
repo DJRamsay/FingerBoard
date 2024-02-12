@@ -2,41 +2,37 @@
 import Toybox.Graphics;
 [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 2; ]
 import Toybox.WatchUi;
-[ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 3; ]
-import Toybox.Timer;
 [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 4; ]
-import Toybox.System;
-[ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 8; ]
 class FingerBoardView extends WatchUi.View{
-    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 8; ]
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 4; ]
     <init> {
     }
-    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 8; ]
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 4; ]
     static
     <init> {
     }
-    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 9; @position = 16; ]
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 5; @position = 16; ]
     private
     var _typeTitleElement;
-    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 10; @position = 16; ]
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 6; @position = 16; ]
     private
     var _currentTimerElement;
-    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 11; @position = 16; ]
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 7; @position = 16; ]
     private
     var _setsLeftElement;
-    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 14; ]
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 9; ]
     function initialize() as Void {
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_14_26_16_4_start:
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 15 8 ]
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_9_26_11_4_start:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 10 8 ]
         %tmp.2 = getv ? :View;
         %tmp.3 = getv function %tmp.2 :initialize;
         invoke %tmp.2 %tmp.3();
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_14_26_16_4_stop:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_9_26_11_4_stop:
     }
-    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 19; ]
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 14; ]
     function onLayout(dc as Dc) as Void {
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_19_40_27_4_start:
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 20 8 ]
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_14_40_20_4_start:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 15 8 ]
         %tmp.1 = self;
         %tmp.2 = getv function %tmp.1 :setLayout;
         %tmp.4 = getv ? :Rez;
@@ -45,70 +41,181 @@ C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_1
         %tmp.8 = lgetv %dc;
         %tmp.9 = invoke %tmp.5 %tmp.6(%tmp.8);
         invoke %tmp.1 %tmp.2(%tmp.9);
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 22 8 ]
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 17 8 ]
         %tmp.10 = self;
         %tmp.11 = getv function %tmp.10 :findDrawableById;
         %tmp.12 = "type_title";
         %tmp.13 = invoke %tmp.10 %tmp.11(%tmp.12);
         putv self :_typeTitleElement %tmp.13;
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 23 8 ]
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 18 8 ]
         %tmp.14 = self;
         %tmp.15 = getv function %tmp.14 :findDrawableById;
         %tmp.16 = "current_timer";
         %tmp.17 = invoke %tmp.14 %tmp.15(%tmp.16);
         putv self :_currentTimerElement %tmp.17;
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 24 8 ]
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 19 8 ]
         %tmp.18 = self;
         %tmp.19 = getv function %tmp.18 :findDrawableById;
         %tmp.20 = "sets_left";
         %tmp.21 = invoke %tmp.18 %tmp.19(%tmp.20);
         putv self :_setsLeftElement %tmp.21;
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 26 8 ]
-        %tmp.22 = self;
-        %tmp.23 = getv function %tmp.22 :updateSetsValue;
-        %tmp.24 = 7;
-        invoke %tmp.22 %tmp.23(%tmp.24);
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_19_40_27_4_stop:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_14_40_20_4_stop:
     }
-    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 32; ]
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 25; ]
     function onShow() as Void {
     }
-    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 36; ]
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 29; ]
     function onUpdate(dc as Dc) as Void {
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_36_40_39_4_start:
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 38 8 ]
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_29_40_32_4_start:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 31 8 ]
         %tmp.2 = getv ? :View;
         %tmp.3 = getv function %tmp.2 :onUpdate;
         %tmp.5 = lgetv %dc;
         invoke %tmp.2 %tmp.3(%tmp.5);
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_36_40_39_4_stop:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_29_40_32_4_stop:
     }
-    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 44; ]
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 37; ]
     function onHide() as Void {
     }
-    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 47; ]
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 40; ]
+    function setModeTypeValue(modeType) as Void {
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_40_47_56_4_start:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 41 8 ]
+        [ "C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_40_47_56_4_start" "C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_40_47_56_4_stop" ]
+        %label.1 = local;
+        [ "C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_40_47_56_4_start" "C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_40_47_56_4_stop" ]
+        %color.2 = local;
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 43 8 ]
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_43_8_50_8_if_stmt:
+        %tmp.2 = lgetv %modeType;
+        %tmp.4 = getv ? :ModeType;
+        %tmp.5 = getv %tmp.4 :Hang;
+        %tmp.6 = eq %tmp.2 %tmp.5;
+        bf %tmp.6 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_43_8_50_8_if_false;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_43_8_50_8_if_true:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_43_38_46_8_start:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 44 12 ]
+        %tmp.7 = "HANG";
+        lputv %label.1 %tmp.7;
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 45 12 ]
+        %tmp.8 = getm $.Toybox.Graphics;
+        %tmp.9 = getv %tmp.8 :COLOR_DK_RED;
+        lputv %color.2 %tmp.9;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_43_38_46_8_stop:
+        goto @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_43_8_50_8_if_end;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_43_8_50_8_if_false:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_47_13_50_8_start:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 48 12 ]
+        %tmp.10 = "REST";
+        lputv %label.1 %tmp.10;
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 49 12 ]
+        %tmp.11 = getm $.Toybox.Graphics;
+        %tmp.12 = getv %tmp.11 :COLOR_BLUE;
+        lputv %color.2 %tmp.12;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_47_13_50_8_stop:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_43_8_50_8_if_end:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 52 8 ]
+        %tmp.14 = getv ? :_typeTitleElement;
+        %tmp.15 = getv function %tmp.14 :setText;
+        %tmp.17 = lgetv %label.1;
+        invoke %tmp.14 %tmp.15(%tmp.17);
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 53 8 ]
+        %tmp.19 = getv ? :_typeTitleElement;
+        %tmp.20 = getv function %tmp.19 :setColor;
+        %tmp.22 = lgetv %color.2;
+        invoke %tmp.19 %tmp.20(%tmp.22);
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 55 8 ]
+        %tmp.23 = getm $.Toybox.WatchUi;
+        %tmp.24 = getv function %tmp.23 :requestUpdate;
+        invoke %tmp.23 %tmp.24();
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_40_47_56_4_stop:
+    }
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 58; ]
+    function setTimerValue(value) as Void {
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_58_41_69_4_start:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 59 8 ]
+        [ "C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_58_41_69_4_start" "C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_58_41_69_4_stop" ]
+        %minutes.1 = local;
+        %tmp.2 = lgetv %value;
+        %tmp.3 = 60;
+        %tmp.4 = div %tmp.2 %tmp.3;
+        lputv %minutes.1 %tmp.4;
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 61 8 ]
+        [ "C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_58_41_69_4_start" "C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_58_41_69_4_stop" ]
+        %seconds.2 = local;
+        %tmp.6 = lgetv %value;
+        %tmp.7 = 60;
+        %tmp.8 = mod %tmp.6 %tmp.7;
+        lputv %seconds.2 %tmp.8;
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 62 8 ]
+        [ "C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_58_41_69_4_start" "C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_58_41_69_4_stop" ]
+        %secondsFormatted.3 = local;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_62_31_62_89_begin:
+        %tmp.10 = lgetv %seconds.2;
+        %tmp.11 = 9;
+        %tmp.12 = gt %tmp.10 %tmp.11;
+        bf %tmp.12 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_62_31_62_89_false;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_62_31_62_89_true:
+        %tmp.13 = lgetv %seconds.2;
+        %tmp.14 = getv function %tmp.13 :toString;
+        %tmp.15 = invoke %tmp.13 %tmp.14();
+        push %tmp.15;
+        goto @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_62_31_62_89_end;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_62_31_62_89_false:
+        %tmp.16 = "0";
+        %tmp.17 = lgetv %seconds.2;
+        %tmp.18 = getv function %tmp.17 :toString;
+        %tmp.19 = invoke %tmp.17 %tmp.18();
+        %tmp.20 = add %tmp.16 %tmp.19;
+        push %tmp.20;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_62_31_62_89_end:
+        %tmp.21 = phi [%tmp.12 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_62_31_62_89_begin] [%tmp.15 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_62_31_62_89_true] [%tmp.20 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_62_31_62_89_false] [%tmp.21 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_62_31_62_89_end];
+        lputv %secondsFormatted.3 %tmp.21;
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 64 8 ]
+        [ "C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_58_41_69_4_start" "C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_58_41_69_4_stop" ]
+        %formattedValue.4 = local;
+        %tmp.22 = lgetv %minutes.1;
+        %tmp.23 = getv function %tmp.22 :toString;
+        %tmp.24 = invoke %tmp.22 %tmp.23();
+        %tmp.25 = ":";
+        %tmp.26 = add %tmp.24 %tmp.25;
+        %tmp.28 = lgetv %secondsFormatted.3;
+        %tmp.29 = add %tmp.26 %tmp.28;
+        lputv %formattedValue.4 %tmp.29;
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 66 8 ]
+        %tmp.31 = getv ? :_currentTimerElement;
+        %tmp.32 = getv function %tmp.31 :setText;
+        %tmp.34 = lgetv %formattedValue.4;
+        invoke %tmp.31 %tmp.32(%tmp.34);
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 68 8 ]
+        %tmp.35 = getm $.Toybox.WatchUi;
+        %tmp.36 = getv function %tmp.35 :requestUpdate;
+        invoke %tmp.35 %tmp.36();
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_58_41_69_4_stop:
+    }
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 71; ]
     function updateSetsValue(sets) as Void {
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_47_42_54_4_start:
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 48 8 ]
-        [ "C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_47_42_54_4_start" "C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_47_42_54_4_stop" ]
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_71_42_78_4_start:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 72 8 ]
+        [ "C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_71_42_78_4_start" "C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_71_42_78_4_stop" ]
         %multipleSign.1 = local;
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_48_27_48_44_begin:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_72_27_72_44_begin:
         %tmp.2 = lgetv %sets;
         %tmp.3 = 1;
         %tmp.4 = eq %tmp.2 %tmp.3;
-        bf %tmp.4 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_48_27_48_44_false;
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_48_27_48_44_true:
+        bf %tmp.4 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_72_27_72_44_false;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_72_27_72_44_true:
         %tmp.5 = "";
         push %tmp.5;
-        goto @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_48_27_48_44_end;
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_48_27_48_44_false:
+        goto @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_72_27_72_44_end;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_72_27_72_44_false:
         %tmp.6 = "s";
         push %tmp.6;
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_48_27_48_44_end:
-        %tmp.7 = phi [%tmp.4 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_48_27_48_44_begin] [%tmp.5 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_48_27_48_44_true] [%tmp.6 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_48_27_48_44_false] [%tmp.7 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_48_27_48_44_end];
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_72_27_72_44_end:
+        %tmp.7 = phi [%tmp.4 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_72_27_72_44_begin] [%tmp.5 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_72_27_72_44_true] [%tmp.6 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_72_27_72_44_false] [%tmp.7 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_72_27_72_44_end];
         lputv %multipleSign.1 %tmp.7;
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 49 8 ]
-        [ "C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_47_42_54_4_start" "C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_47_42_54_4_stop" ]
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 73 8 ]
+        [ "C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_71_42_78_4_start" "C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_71_42_78_4_stop" ]
         %formattedValue.2 = local;
         %tmp.8 = lgetv %sets;
         %tmp.9 = getv function %tmp.8 :toString;
@@ -120,16 +227,16 @@ C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_4
         %tmp.16 = " left";
         %tmp.17 = add %tmp.15 %tmp.16;
         lputv %formattedValue.2 %tmp.17;
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 51 8 ]
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 75 8 ]
         %tmp.19 = getv ? :_setsLeftElement;
         %tmp.20 = getv function %tmp.19 :setText;
         %tmp.22 = lgetv %formattedValue.2;
         invoke %tmp.19 %tmp.20(%tmp.22);
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 53 8 ]
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc" 77 8 ]
         %tmp.23 = getm $.Toybox.WatchUi;
         %tmp.24 = getv function %tmp.23 :requestUpdate;
         invoke %tmp.23 %tmp.24();
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_47_42_54_4_stop:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardView_mc_71_42_78_4_stop:
     }
 }
 [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardView.mc"; @line = 1; ]

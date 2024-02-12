@@ -1,15 +1,10 @@
 import Toybox.Graphics;
 import Toybox.WatchUi;
-import Toybox.Timer;
-import Toybox.System;
-
-//var _topKey;
 
 class FingerBoardView extends WatchUi.View {
     private var _typeTitleElement;
     private var _currentTimerElement;
     private var _setsLeftElement;
-
 
     function initialize() {
         View.initialize();
@@ -22,8 +17,6 @@ class FingerBoardView extends WatchUi.View {
         _typeTitleElement = findDrawableById("type_title");
         _currentTimerElement = findDrawableById("current_timer");
         _setsLeftElement = findDrawableById("sets_left");
-
-        updateSetsValue(7);
     }
 
     // Called when this View is brought to the foreground. Restore
@@ -44,7 +37,36 @@ class FingerBoardView extends WatchUi.View {
     function onHide() as Void {
     }
 
-    function setTimer
+    function setModeTypeValue(modeType) as Void{
+        var label, color;
+
+        if (modeType == ModeType.Hang){
+            label = "HANG";
+            color = Graphics.COLOR_DK_RED;
+        }
+        else {
+            label = "REST";
+            color = Graphics.COLOR_BLUE;
+        } 
+
+        _typeTitleElement.setText(label);
+        _typeTitleElement.setColor(color);
+
+        WatchUi.requestUpdate();
+    }
+
+    function setTimerValue(value) as Void{
+        var minutes = value/60;
+
+        var seconds = value%60;
+        var secondsFormatted = seconds > 9 ? seconds.toString() : "0" + seconds.toString();
+
+        var formattedValue = minutes.toString() + ":" + secondsFormatted;
+
+        _currentTimerElement.setText(formattedValue);
+
+        WatchUi.requestUpdate();   
+    }
 
     function updateSetsValue(sets) as Void{
         var multipleSign = sets == 1 ? "" : "s";

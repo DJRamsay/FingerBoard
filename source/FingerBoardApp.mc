@@ -3,7 +3,7 @@ import Toybox.Lang;
 import Toybox.WatchUi;
 
 class FingerBoardApp extends Application.AppBase {
-
+    private var _view;
     function initialize() {
         AppBase.initialize();
     }
@@ -18,11 +18,21 @@ class FingerBoardApp extends Application.AppBase {
 
     // Return the initial view of your application here
     function getInitialView() as [Views] or [Views, InputDelegates] {
-        return [ new FingerBoardView(), new FingerBoardDelegate() ];
+        _view = new FingerBoardView();
+        return [ _view, new FingerBoardDelegate() ];
     }
 
+    //Returns main View Instance
+    function getView() as FingerBoardView{
+        return _view;
+    }
 }
 
 function getApp() as FingerBoardApp {
     return Application.getApp() as FingerBoardApp;
+}
+
+//Returns main view instance
+function getView() as FingerBoardView {
+    return Application.getApp().getView();
 }
