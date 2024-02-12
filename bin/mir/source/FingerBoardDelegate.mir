@@ -1,0 +1,28 @@
+[ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 1; ]
+import Toybox.Lang;
+[ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 2; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 3; ]
+import Toybox.System;
+[ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 5; ]
+class FingerBoardDelegate extends WatchUi.BehaviorDelegate{
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 7; ]
+    function initialize() as Void {
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_7_26_9_4_start:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 8 8 ]
+        %tmp.2 = getv ? :BehaviorDelegate;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_7_26_9_4_stop:
+    }
+}
+[ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 1; ]
+<init> {
+}
