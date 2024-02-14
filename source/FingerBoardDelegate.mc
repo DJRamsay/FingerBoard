@@ -3,13 +3,10 @@ import Toybox.WatchUi;
 import Toybox.System;
 
 class FingerBoardDelegate extends WatchUi.BehaviorDelegate {
-    private static var sets = 5;
-    private static var setDuration = 10;
-
     private var _inProgress = false;
 
     private var _currentDuration;
-    private var _currentSet;
+    private var _currentSet; 
 
     private var _timer;
     private var _view = getView();
@@ -29,18 +26,32 @@ class FingerBoardDelegate extends WatchUi.BehaviorDelegate {
 
     //Starts Countdown
     function startCountdown() {
-        _currentDuration = setDuration;
+        _currentDuration = DataManager.getSetDuration()-1; //Remove???
+        _currentSet = DataManager.getSetCount()-1;
+
+        _view.updateSetsValue(_currentSet);
+        _view.setTimerValue(_currentDuration);
 
         _timer = new Timer.Timer();
         _timer.start(method(:updateCountdownValue), 1000, true);
     }
 
     function updateCountdownValue() as Void{
-        if (_currentDuration == 0){
+        if (_currentDuration == 0 && _currentSet == 0){
             _timer.stop();
+            return;
         }
 
-        _view.setTimerValue(_currentDuration);
+        if (_currentDuration == 0){
+            _currentDuration = DataManager.getSetDuration();
+
+            _currentSet--;
+            _view.updateSetsValue(_currentSet);
+            _view.setModeTypeValue(_currentSet % 2 == 0 ? ModeType.Hang : ModeType.Rest);
+        }
+
         _currentDuration--;
+        _view.setTimerValue(_currentDuration);
+        
     }
 }

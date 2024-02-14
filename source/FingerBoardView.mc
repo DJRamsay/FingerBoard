@@ -17,6 +17,10 @@ class FingerBoardView extends WatchUi.View {
         _typeTitleElement = findDrawableById("type_title");
         _currentTimerElement = findDrawableById("current_timer");
         _setsLeftElement = findDrawableById("sets_left");
+
+        setModeTypeValue((DataManager.getSetCount() - 1) % 2 == 0 ? ModeType.Hang : ModeType.Rest);
+        setTimerValue(DataManager.getSetDuration());
+        updateSetsValue(DataManager.getSetCount());
     }
 
     // Called when this View is brought to the foreground. Restore
