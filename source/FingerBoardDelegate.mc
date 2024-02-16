@@ -34,9 +34,9 @@ class FingerBoardDelegate extends WatchUi.BehaviorDelegate {
     function startCountdown() {
         if (_onPause == false) {
             _currentDuration = DataManager.getSetDuration()-1; //Remove???
-            //System.println(_currentDuration.toString());
+            //System.println(_currentDuration.toString()); Print value
             _currentSet = DataManager.getSetCount()-1;
-            //System.println(_currentSet.toString());
+            //System.println(_currentSet.toString()); Print value
         }
 
         _view.updateSetsValue(_currentSet);
