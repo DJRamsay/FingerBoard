@@ -21,6 +21,7 @@ class FingerBoardView extends WatchUi.View {
         setModeTypeValue((DataManager.getSetCount() - 1) % 2 == 0 ? ModeType.Hang : ModeType.Rest);
         setTimerValue(DataManager.getSetDuration());
         updateSetsValue(DataManager.getSetCount());
+        
     }
 
     // Called when this View is brought to the foreground. Restore

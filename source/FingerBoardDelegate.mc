@@ -4,11 +4,12 @@ import Toybox.System;
 
 class FingerBoardDelegate extends WatchUi.BehaviorDelegate {
     private var _inProgress = false;
+    private var _onPause = false;
 
     private var _currentDuration;
     private var _currentSet; 
 
-    private var _timer;
+    private var _timer = new Timer.Timer();
     private var _view = getView();
 
     function initialize() {
@@ -20,20 +21,33 @@ class FingerBoardDelegate extends WatchUi.BehaviorDelegate {
             _inProgress = true;
             startCountdown();
         }
+        else {
+            _onPause = true;
+            _inProgress = false;
+            pauseCountdown();
+        }
 
         return true;
     }
 
     //Starts Countdown
     function startCountdown() {
-        _currentDuration = DataManager.getSetDuration()-1; //Remove???
-        _currentSet = DataManager.getSetCount()-1;
+        if (_onPause == false) {
+            _currentDuration = DataManager.getSetDuration()-1; //Remove???
+            //System.println(_currentDuration.toString());
+            _currentSet = DataManager.getSetCount()-1;
+            //System.println(_currentSet.toString());
+        }
 
         _view.updateSetsValue(_currentSet);
         _view.setTimerValue(_currentDuration);
 
-        _timer = new Timer.Timer();
+        _onPause = false;
         _timer.start(method(:updateCountdownValue), 1000, true);
+    }
+
+    function pauseCountdown() {
+        _timer.stop();
     }
 
     function updateCountdownValue() as Void{

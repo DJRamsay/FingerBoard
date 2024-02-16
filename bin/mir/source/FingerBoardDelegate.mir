@@ -9,10 +9,15 @@ class FingerBoardDelegate extends WatchUi.BehaviorDelegate{
     [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 5; ]
     <init> {
 [ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 12 16 ]
-        %tmp.1 = self;
-        %tmp.2 = getv function %tmp.1 :getView;
-        %tmp.3 = invoke %tmp.1 %tmp.2();
-        putv self :_view %tmp.3;
+        %tmp.4 = getv ? :Timer;
+        %tmp.5 = getv function ? %tmp.4 :Timer;
+        %tmp.1 = newc %tmp.5 ();
+        putv self :_timer %tmp.1;
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 13 16 ]
+        %tmp.6 = self;
+        %tmp.7 = getv function %tmp.6 :getView;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        putv self :_view %tmp.8;
     }
     [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 5; ]
     static
@@ -21,86 +26,111 @@ class FingerBoardDelegate extends WatchUi.BehaviorDelegate{
     [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 6; @position = 16; ]
     private
     var _inProgress = false;
-    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 8; @position = 16; ]
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 7; @position = 16; ]
     private
-    var _currentDuration;
+    var _onPause = false;
     [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 9; @position = 16; ]
     private
-    var _currentSet;
-    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 11; @position = 16; ]
+    var _currentDuration;
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 10; @position = 16; ]
     private
-    var _timer;
+    var _currentSet;
     [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 12; @position = 16; ]
     private
+    var _timer;
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 13; @position = 16; ]
+    private
     var _view;
-    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 14; ]
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 15; ]
     function initialize() as Void {
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_14_26_16_4_start:
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 15 8 ]
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_15_26_17_4_start:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 16 8 ]
         %tmp.2 = getv ? :BehaviorDelegate;
         %tmp.3 = getv function %tmp.2 :initialize;
         invoke %tmp.2 %tmp.3();
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_14_26_16_4_stop:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_15_26_17_4_stop:
     }
-    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 18; ]
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 19; ]
     function onSelect() as Boolean {
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_18_35_25_4_start:
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 19 8 ]
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_19_8_22_8_if_stmt:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_19_35_31_4_start:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 20 8 ]
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_20_8_28_8_if_stmt:
         %tmp.2 = getv ? :_inProgress;
         %tmp.3 = false;
         %tmp.4 = eq %tmp.2 %tmp.3;
-        bf %tmp.4 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_19_8_22_8_if_end;
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_19_8_22_8_if_true:
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_19_33_22_8_start:
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 20 12 ]
+        bf %tmp.4 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_20_8_28_8_if_false;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_20_8_28_8_if_true:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_20_33_23_8_start:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 21 12 ]
         %tmp.5 = true;
         putv self :_inProgress %tmp.5;
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 21 12 ]
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 22 12 ]
         %tmp.6 = self;
         %tmp.7 = getv function %tmp.6 :startCountdown;
         invoke %tmp.6 %tmp.7();
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_19_33_22_8_stop:
-        goto @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_19_8_22_8_if_end;
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_19_8_22_8_if_end:
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 24 8 ]
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_20_33_23_8_stop:
+        goto @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_20_8_28_8_if_end;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_20_8_28_8_if_false:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_24_13_28_8_start:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 25 12 ]
         %tmp.8 = true;
-        ret %tmp.8;
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_18_35_25_4_stop:
-    }
-    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 28; ]
-    function startCountdown() {
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_28_30_37_4_start:
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 29 8 ]
-        %tmp.2 = getv ? :DataManager;
-        %tmp.3 = getv function %tmp.2 :getSetDuration;
-        %tmp.4 = invoke %tmp.2 %tmp.3();
-        %tmp.5 = 1;
-        %tmp.6 = sub %tmp.4 %tmp.5;
-        putv self :_currentDuration %tmp.6;
+        putv self :_onPause %tmp.8;
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 26 12 ]
+        %tmp.9 = false;
+        putv self :_inProgress %tmp.9;
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 27 12 ]
+        %tmp.10 = self;
+        %tmp.11 = getv function %tmp.10 :pauseCountdown;
+        invoke %tmp.10 %tmp.11();
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_24_13_28_8_stop:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_20_8_28_8_if_end:
 [ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 30 8 ]
-        %tmp.8 = getv ? :DataManager;
-        %tmp.9 = getv function %tmp.8 :getSetCount;
-        %tmp.10 = invoke %tmp.8 %tmp.9();
-        %tmp.11 = 1;
-        %tmp.12 = sub %tmp.10 %tmp.11;
-        putv self :_currentSet %tmp.12;
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 32 8 ]
-        %tmp.14 = getv ? :_view;
-        %tmp.15 = getv function %tmp.14 :updateSetsValue;
-        %tmp.17 = getv ? :_currentSet;
-        invoke %tmp.14 %tmp.15(%tmp.17);
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 33 8 ]
-        %tmp.19 = getv ? :_view;
-        %tmp.20 = getv function %tmp.19 :setTimerValue;
-        %tmp.22 = getv ? :_currentDuration;
-        invoke %tmp.19 %tmp.20(%tmp.22);
+        %tmp.12 = true;
+        ret %tmp.12;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_19_35_31_4_stop:
+    }
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 34; ]
+    function startCountdown() {
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_34_30_47_4_start:
 [ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 35 8 ]
-        %tmp.26 = getv ? :Timer;
-        %tmp.27 = getv function ? %tmp.26 :Timer;
-        %tmp.23 = newc %tmp.27 ();
-        putv self :_timer %tmp.23;
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 36 8 ]
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_35_8_40_8_if_stmt:
+        %tmp.2 = getv ? :_onPause;
+        %tmp.3 = false;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_35_8_40_8_if_end;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_35_8_40_8_if_true:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_35_31_40_8_start:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 36 12 ]
+        %tmp.6 = getv ? :DataManager;
+        %tmp.7 = getv function %tmp.6 :getSetDuration;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        %tmp.9 = 1;
+        %tmp.10 = sub %tmp.8 %tmp.9;
+        putv self :_currentDuration %tmp.10;
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 38 12 ]
+        %tmp.12 = getv ? :DataManager;
+        %tmp.13 = getv function %tmp.12 :getSetCount;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        %tmp.15 = 1;
+        %tmp.16 = sub %tmp.14 %tmp.15;
+        putv self :_currentSet %tmp.16;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_35_31_40_8_stop:
+        goto @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_35_8_40_8_if_end;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_35_8_40_8_if_end:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 42 8 ]
+        %tmp.18 = getv ? :_view;
+        %tmp.19 = getv function %tmp.18 :updateSetsValue;
+        %tmp.21 = getv ? :_currentSet;
+        invoke %tmp.18 %tmp.19(%tmp.21);
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 43 8 ]
+        %tmp.23 = getv ? :_view;
+        %tmp.24 = getv function %tmp.23 :setTimerValue;
+        %tmp.26 = getv ? :_currentDuration;
+        invoke %tmp.23 %tmp.24(%tmp.26);
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 45 8 ]
+        %tmp.27 = false;
+        putv self :_onPause %tmp.27;
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 46 8 ]
         %tmp.29 = getv ? :_timer;
         %tmp.30 = getv function %tmp.29 :start;
         %tmp.31 = self;
@@ -110,94 +140,103 @@ C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_
         %tmp.36 = 1000;
         %tmp.37 = true;
         invoke %tmp.29 %tmp.30(%tmp.35, %tmp.36, %tmp.37);
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_28_30_37_4_stop:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_34_30_47_4_stop:
     }
-    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 39; ]
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 49; ]
+    function pauseCountdown() {
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_49_30_51_4_start:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 50 8 ]
+        %tmp.2 = getv ? :_timer;
+        %tmp.3 = getv function %tmp.2 :stop;
+        invoke %tmp.2 %tmp.3();
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_49_30_51_4_stop:
+    }
+    [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 53; ]
     function updateCountdownValue() as Void {
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_39_43_56_4_start:
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 40 8 ]
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_40_8_43_8_if_stmt:
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_40_12_40_52_begin:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_53_43_70_4_start:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 54 8 ]
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_54_8_57_8_if_stmt:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_54_12_54_52_begin:
         %tmp.2 = getv ? :_currentDuration;
         %tmp.3 = 0;
         %tmp.4 = eq %tmp.2 %tmp.3;
-        bf %tmp.4 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_40_8_43_8_if_end;
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_40_37_40_52_true:
+        bf %tmp.4 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_54_8_57_8_if_end;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_54_37_54_52_true:
         %tmp.6 = getv ? :_currentSet;
         %tmp.7 = 0;
         %tmp.8 = eq %tmp.6 %tmp.7;
         push %tmp.8;
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_40_37_40_52_end:
-        %tmp.9 = phi [%tmp.4 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_40_12_40_52_begin] [%tmp.8 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_40_37_40_52_true] [%tmp.9 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_40_37_40_52_end];
-        bf %tmp.9 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_40_8_43_8_if_end;
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_40_8_43_8_if_true:
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_40_54_43_8_start:
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 41 12 ]
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_54_37_54_52_end:
+        %tmp.9 = phi [%tmp.4 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_54_12_54_52_begin] [%tmp.8 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_54_37_54_52_true] [%tmp.9 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_54_37_54_52_end];
+        bf %tmp.9 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_54_8_57_8_if_end;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_54_8_57_8_if_true:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_54_54_57_8_start:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 55 12 ]
         %tmp.11 = getv ? :_timer;
         %tmp.12 = getv function %tmp.11 :stop;
         invoke %tmp.11 %tmp.12();
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 42 12 ]
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 56 12 ]
         ret ?;
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_40_54_43_8_stop:
-        goto @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_40_8_43_8_if_end;
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_40_8_43_8_if_end:
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 45 8 ]
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_45_8_51_8_if_stmt:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_54_54_57_8_stop:
+        goto @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_54_8_57_8_if_end;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_54_8_57_8_if_end:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 59 8 ]
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_59_8_65_8_if_stmt:
         %tmp.14 = getv ? :_currentDuration;
         %tmp.15 = 0;
         %tmp.16 = eq %tmp.14 %tmp.15;
-        bf %tmp.16 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_45_8_51_8_if_end;
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_45_8_51_8_if_true:
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_45_34_51_8_start:
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 46 12 ]
+        bf %tmp.16 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_59_8_65_8_if_end;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_59_8_65_8_if_true:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_59_34_65_8_start:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 60 12 ]
         %tmp.18 = getv ? :DataManager;
         %tmp.19 = getv function %tmp.18 :getSetDuration;
         %tmp.20 = invoke %tmp.18 %tmp.19();
         putv self :_currentDuration %tmp.20;
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 48 12 ]
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 62 12 ]
         %tmp.23 = getv ? :_currentSet;
         %tmp.24 = sub %tmp.23 1;
         putv self :_currentSet dup %tmp.24;
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 49 12 ]
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 63 12 ]
         %tmp.26 = getv ? :_view;
         %tmp.27 = getv function %tmp.26 :updateSetsValue;
         %tmp.29 = getv ? :_currentSet;
         invoke %tmp.26 %tmp.27(%tmp.29);
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 50 12 ]
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 64 12 ]
         %tmp.31 = getv ? :_view;
         %tmp.32 = getv function %tmp.31 :setModeTypeValue;
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_50_35_50_83_begin:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_64_35_64_83_begin:
         %tmp.34 = getv ? :_currentSet;
         %tmp.35 = 2;
         %tmp.36 = mod %tmp.34 %tmp.35;
         %tmp.37 = 0;
         %tmp.38 = eq %tmp.36 %tmp.37;
-        bf %tmp.38 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_50_35_50_83_false;
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_50_35_50_83_true:
+        bf %tmp.38 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_64_35_64_83_false;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_64_35_64_83_true:
         %tmp.40 = getv ? :ModeType;
         %tmp.41 = getv %tmp.40 :Hang;
         push %tmp.41;
-        goto @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_50_35_50_83_end;
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_50_35_50_83_false:
+        goto @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_64_35_64_83_end;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_64_35_64_83_false:
         %tmp.43 = getv ? :ModeType;
         %tmp.44 = getv %tmp.43 :Rest;
         push %tmp.44;
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_50_35_50_83_end:
-        %tmp.45 = phi [%tmp.38 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_50_35_50_83_begin] [%tmp.41 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_50_35_50_83_true] [%tmp.44 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_50_35_50_83_false] [%tmp.45 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_50_35_50_83_end];
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_64_35_64_83_end:
+        %tmp.45 = phi [%tmp.38 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_64_35_64_83_begin] [%tmp.41 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_64_35_64_83_true] [%tmp.44 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_64_35_64_83_false] [%tmp.45 @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_64_35_64_83_end];
         invoke %tmp.31 %tmp.32(%tmp.45);
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_45_34_51_8_stop:
-        goto @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_45_8_51_8_if_end;
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_45_8_51_8_if_end:
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 53 8 ]
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_59_34_65_8_stop:
+        goto @C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_59_8_65_8_if_end;
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_59_8_65_8_if_end:
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 67 8 ]
         %tmp.48 = getv ? :_currentDuration;
         %tmp.49 = sub %tmp.48 1;
         putv self :_currentDuration dup %tmp.49;
-[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 54 8 ]
+[ "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc" 68 8 ]
         %tmp.51 = getv ? :_view;
         %tmp.52 = getv function %tmp.51 :setTimerValue;
         %tmp.54 = getv ? :_currentDuration;
         invoke %tmp.51 %tmp.52(%tmp.54);
-C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_39_43_56_4_stop:
+C_Users_User_Documents_VSProjects_Garmin_FingerBoard_source_FingerBoardDelegate_mc_53_43_70_4_stop:
     }
 }
 [ @file = "C:\Users\User\Documents\VSProjects\Garmin\FingerBoard\source\FingerBoardDelegate.mc"; @line = 1; ]
